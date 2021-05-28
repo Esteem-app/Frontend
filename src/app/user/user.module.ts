@@ -4,6 +4,9 @@ import {UserLoginComponent} from './user-login/user-login.component';
 import {UserRegisterComponent} from './user-register/user-register.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -11,7 +14,10 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     CommonModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    FormsModule
+
   ]
 })
 export class UserModule { }
