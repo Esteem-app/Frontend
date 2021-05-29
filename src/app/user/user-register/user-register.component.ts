@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {RegisterService} from '../../register.service';
-import {User} from '../../../shared/model/user';
 import {NgForm} from '@angular/forms';
+import { User } from '../user.model';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-register',
@@ -11,23 +11,22 @@ import {NgForm} from '@angular/forms';
 })
 export class UserRegisterComponent implements OnInit {
   flag = true;
-  user: User;
+  user: User = new User('', '');
 
-  constructor(private  router: Router, private registerService: RegisterService) {
-  }
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
     this.resetForm();
-
   }
 
 
   resetForm(form?: NgForm) {
     if (form !== null) {
-      this.user = {
-        email: '',
-        password: ''
-      };
+      this.user.email = '';
+      this.user.password = '';
     }
   }
 
@@ -37,6 +36,6 @@ export class UserRegisterComponent implements OnInit {
   }
 
   register() {
-    this.registerService.register();
+    this.userService.register(this.user); // TODO subscribe?
   }
 }

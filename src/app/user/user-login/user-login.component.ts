@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { User } from '../user.model';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -9,19 +11,24 @@ import {Router} from '@angular/router';
 })
 export class UserLoginComponent implements OnInit {
   flag = true;
-  email = '';
-  password = '';
-
-  constructor(private  router: Router) {
-  }
+  user: User = new User('', '');
+  
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
   }
 
   cancel() {
-    this.email = '';
-    this.password = '';
+    this.user.email = '';
+    this.user.password = '';
     this.router.navigate(['/home']);
-
   }
+  
+  login() {
+    this.userService.login(this.user);
+  }
+
 }
