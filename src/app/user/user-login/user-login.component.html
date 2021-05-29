@@ -1,1 +1,24 @@
-<p>user-login works!</p>
+<mat-card class="col-8 offset-2" style="width: 900px;margin: auto">
+
+  <h2> Login </h2>
+  <mat-form-field>
+    <label>
+      <input
+        ngModel required email  name="email" #email="ngModel"
+        matInput  type="email" placeholder="e-mail">
+    </label>
+    <mat-error *ngIf="email.hasError('required')"> Email  is required</mat-error>
+    <mat-error *ngIf="!email.hasError('required')"> Email  is invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field hintLabel="Min 3 character">
+    <label>
+      <input minlength="3"
+             ngModel name="password" #password="ngModel"
+             matInput [type]="flag? 'password': 'text'" placeholder="Enter your password">
+    </label>
+  </mat-form-field>
+  <div class="button-container">
+    <button mat-flat-button color="accent">Login</button>
+    <button mat-flat-button color="warn"> Cancel </button>
+  </div>
+</mat-card>
