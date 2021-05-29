@@ -1,1 +1,9 @@
-<p>home-wall works!</p>
+<mat-card *ngFor="let achievement of achievements" class="mb-3">
+  <mat-card-header>
+    <div mat-card-avatar><mat-icon>date_range</mat-icon></div>
+    <mat-card-title>{{ achievement.created }}</mat-card-title>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+
+  {{ achievement.content }}
+</mat-card>
