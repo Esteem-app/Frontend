@@ -31,11 +31,13 @@ export class UserRegisterComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['/home']);
     this.resetForm();
+    this.router.navigate(['/home']);
   }
 
   register() {
-    this.userService.register(this.user); // TODO subscribe?
+    this.userService.register(this.user);
+    window.alert("Succesfully registered, please login");
+    this.router.navigate(['/login']);
   }
 }
