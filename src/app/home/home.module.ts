@@ -5,6 +5,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -20,8 +21,9 @@ import { HomeWallComponent } from './home-wall/home-wall.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatGridListModule,
-    MatButtonModule
+    // MatGridListModule,
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class HomeModule { }

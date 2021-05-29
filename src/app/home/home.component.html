@@ -1,20 +1,19 @@
-<h1>My achievements!</h1>
+<div class="container">
+  <div class="row">
+    <div class="text-center">
+      <h1 class="text-light">My achievements</h1>
+    </div>
+  </div>
 
-<mat-grid-list cols="12" >
-  <mat-grid-tile [colspan]="3" class="c-display-none"></mat-grid-tile>
-  
-  <mat-grid-tile [colspan]="6">
-    <app-home-form></app-home-form>
-  </mat-grid-tile>
-  
-  <mat-grid-tile [colspan]="3" class="c-display-none"></mat-grid-tile>
-  
-  
-  <mat-grid-tile [colspan]="3" class="c-display-none"></mat-grid-tile>
-  
-  <mat-grid-tile [colspan]="6">
-    <app-home-wall></app-home-wall>
-  </mat-grid-tile>
-  
-  <mat-grid-tile [colspan]="3" class="c-display-none"></mat-grid-tile>
-</mat-grid-list>
+  <div class="row">
+    <div class="text-center">
+      <app-home-form></app-home-form>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-6 offset-3">
+      <app-home-wall></app-home-wall>
+    </div>
+  </div>
+</div>
