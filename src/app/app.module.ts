@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -34,6 +35,7 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
     MatInputModule,
     MatButtonModule,
     MatRippleModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
