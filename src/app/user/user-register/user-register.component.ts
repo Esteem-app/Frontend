@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {RegisterService} from '../../register.service';
+import {User} from '../../../shared/model/user';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-user-register',
@@ -8,18 +11,32 @@ import {Router} from '@angular/router';
 })
 export class UserRegisterComponent implements OnInit {
   flag = true;
-  email = '';
-  password = '';
+  user: User;
 
-  constructor(private  router: Router) {
+  constructor(private  router: Router, private registerService: RegisterService) {
   }
 
   ngOnInit(): void {
+    this.resetForm();
+
+  }
+
+
+  resetForm(form?: NgForm) {
+    if (form !== null) {
+      this.user = {
+        email: '',
+        password: ''
+      };
+    }
   }
 
   cancel() {
-    this.email = '';
-    this.password = '';
     this.router.navigate(['/home']);
+    this.resetForm();
+  }
+
+  register() {
+    this.registerService.register();
   }
 }

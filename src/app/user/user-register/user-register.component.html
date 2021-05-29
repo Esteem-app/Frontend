@@ -1,23 +1,25 @@
 <mat-card class="col-8 offset-2" style="width: 900px;margin: auto">
 
   <h2> Register </h2>
+  <form #userRegistrationForm="ngForm">
   <mat-form-field class="input-full-width">
     <label>
       <input
-        ngModel required email name="email" #email="ngModel"
+        ngModel required email name="email" #email="ngModel" [(ngModel)]="user.email"
         matInput type="email" placeholder="e-mail">
     </label>
     <mat-error *ngIf="email.hasError('required')"> Email is required</mat-error>
     <mat-error *ngIf="!email.hasError('required')"> Email is invalid</mat-error>
   </mat-form-field>
-  <mat-form-field  class="input-full-width" hintLabel="Min 3 character">
+
+  <mat-form-field class="input-full-width" hintLabel="Min 3 character">
     <label>
       <input minlength="3"
-             ngModel name="password" #password="ngModel"
+             ngModel name="password" #password="ngModel" [(ngModel)]="user.password"
              matInput [type]="flag? 'password': 'text'" placeholder="Enter your password">
     </label>
   </mat-form-field>
-  <mat-form-field  class="input-full-width" hintLabel="Min 3 character">
+  <mat-form-field class="input-full-width" hintLabel="Min 3 character">
     <label>
       <input minlength="3"
              ngModel name="passwordConfirm" #passwordConfirm="ngModel"
@@ -26,7 +28,8 @@
     <mat-error *ngIf="password!=passwordConfirm"> Password and confirmed password doesn't match</mat-error>
   </mat-form-field>
   <div class="button-container">
-    <button mat-flat-button color="accent"> Register </button>
+    <button mat-flat-button color="accent" type="submit" (click)="register()"> Register</button>
     <button mat-flat-button color="warn" (click)="cancel()"> Cancel</button>
   </div>
+  </form>
 </mat-card>

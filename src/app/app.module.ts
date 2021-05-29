@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
 import {UserRegisterComponent} from './user/user-register/user-register.component';
+import {AuthModule} from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {UserRegisterComponent} from './user/user-register/user-register.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AuthModule,
     FormsModule,
     MatCardModule,
     MatFormFieldModule,
