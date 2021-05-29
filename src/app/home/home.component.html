@@ -24,7 +24,7 @@
       <mat-card *ngFor="let achievement of achievements" class="mb-3">
         <mat-card-header>
           <div mat-card-avatar><mat-icon>date_range</mat-icon></div>
-          <mat-card-title>{{ achievement.created }}</mat-card-title>
+          <mat-card-title>{{ achievement.created | date: 'dd MMMM yyyy hh:mm:ss' }}</mat-card-title>
         </mat-card-header>
       
         {{ achievement.content }}
