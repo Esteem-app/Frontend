@@ -10,7 +10,6 @@ import { HomeService } from '../home.service';
 export class HomeWallComponent implements OnInit {
 
   achievements: Achievement[] = [];
-  newAchievement = '';
   
   constructor(
     private homeService: HomeService

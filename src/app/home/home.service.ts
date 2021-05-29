@@ -9,10 +9,11 @@ import { Achievement } from './achievement.model';
   providedIn: 'root'
 })
 export class HomeService {
+  
+  achievements: Achievement[] = [];
 
   constructor(
     private http: HttpClient,
-    private userService: UserService
   ) { }
   
   addAchievement(achievementForm: AchievementFormModel) {

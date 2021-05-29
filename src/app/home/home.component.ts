@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AchievementFormModel } from './achievement-form.model';
+import { Achievement } from './achievement.model';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  achievements: Achievement[] = [];
+  newAchievement = '';
+  achievementForm = new AchievementFormModel('');
+  
+  constructor(
+    private homeService: HomeService
+  ) { }
 
   ngOnInit(): void {
+  }
+  
+  getAchievements() {
+    this.homeService.getAchievements().subscribe({
+      next: (resp: Achievement[]) => this.achievements = resp
+    });;
+  }
+  
+  addAchievement() {
+    this.homeService.addAchievement(this.achievementForm);
+    this.getAchievements();
   }
 
 }
