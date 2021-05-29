@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
       owner: "string",
       created: "just now"
   })
-    setTimeout(() => this.getAchievements(), 5000);
+    setTimeout(() => this.getAchievements(), 3000);
   }
 
 }
