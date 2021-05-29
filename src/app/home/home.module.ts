@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
-import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
@@ -11,6 +10,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { HomeFormComponent } from './home-form/home-form.component';
 import { HomeWallComponent } from './home-wall/home-wall.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,10 +18,10 @@ import { HomeWallComponent } from './home-wall/home-wall.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    // MatGridListModule,
     MatButtonModule,
     MatCardModule
   ]
