@@ -1,4 +1,20 @@
-<p>home works!</p>
+<h1>My achievements!</h1>
 
-<app-home-form></app-home-form>
-<app-home-wall></app-home-wall>
+<mat-grid-list cols="12" >
+  <mat-grid-tile [colspan]="3" class="c-display-none"></mat-grid-tile>
+  
+  <mat-grid-tile [colspan]="6">
+    <app-home-form></app-home-form>
+  </mat-grid-tile>
+  
+  <mat-grid-tile [colspan]="3" class="c-display-none"></mat-grid-tile>
+  
+  
+  <mat-grid-tile [colspan]="3" class="c-display-none"></mat-grid-tile>
+  
+  <mat-grid-tile [colspan]="6">
+    <app-home-wall></app-home-wall>
+  </mat-grid-tile>
+  
+  <mat-grid-tile [colspan]="3" class="c-display-none"></mat-grid-tile>
+</mat-grid-list>
