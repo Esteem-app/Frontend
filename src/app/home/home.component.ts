@@ -11,7 +11,6 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit {
 
   achievements: Achievement[] = [];
-  newAchievement = '';
   achievementForm = new AchievementFormModel('');
   
   constructor(
@@ -19,6 +18,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getAchievements();
   }
   
   getAchievements() {
@@ -29,7 +29,13 @@ export class HomeComponent implements OnInit {
   
   addAchievement() {
     this.homeService.addAchievement(this.achievementForm);
-    this.getAchievements();
+    this.achievements.unshift({
+      id: 1,
+      content: this.achievementForm.content,
+      owner: "string",
+      created: "just now"
+  })
+    // setTimeout(() => this.getAchievements(), 3000);
   }
 
 }

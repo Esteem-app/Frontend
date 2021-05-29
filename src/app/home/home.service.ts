@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AchievementFormModel } from './achievement-form.model';
 import { Urls } from '../config/urls'
-import { UserService } from '../user/user.service';
 import { Achievement } from './achievement.model';
 
 @Injectable({
