@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-register',
@@ -6,11 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-register.component.scss']
 })
 export class UserRegisterComponent implements OnInit {
-  flag: any;
+  flag = true;
+  email = '';
+  password = '';
 
-  constructor() { }
+  constructor(private  router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
+  cancel() {
+    this.email = '';
+    this.password = '';
+    this.router.navigate(['/home']);
+  }
 }
