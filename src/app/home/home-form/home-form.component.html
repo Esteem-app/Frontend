@@ -1,1 +1,9 @@
-<p>home-form works!</p>
+<mat-form-field appearance="fill">
+  <mat-label>Today I appreciate myself for...</mat-label>
+  <input matInput [(ngModel)]="achievementForm.content" [name]="newAchievement">
+  <mat-icon matSuffix>help_outline</mat-icon>
+</mat-form-field>
+
+<div class="mt-3">
+  <button mat-raised-button (click)="addAchievement()">Add achievement</button>
+</div>
