@@ -9,13 +9,16 @@ import {UserLoginComponent} from './user/user-login/user-login.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {UserModule} from './user/user.module';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    UserLoginComponent
+    NavbarComponent
   ],
   imports: [
+    UserModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
