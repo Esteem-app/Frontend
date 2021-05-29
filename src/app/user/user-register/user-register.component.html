@@ -1,1 +1,32 @@
-<p>user-register works!</p>
+<mat-card class="col-8 offset-2" style="width: 900px;margin: auto">
+
+  <h2> Register </h2>
+  <mat-form-field>
+    <label>
+      <input
+        ngModel required email name="email" #email="ngModel"
+        matInput type="email" placeholder="e-mail">
+    </label>
+    <mat-error *ngIf="email.hasError('required')"> Email is required</mat-error>
+    <mat-error *ngIf="!email.hasError('required')"> Email is invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field hintLabel="Min 3 character">
+    <label>
+      <input minlength="3"
+             ngModel name="password" #password="ngModel"
+             matInput [type]="flag? 'password': 'text'" placeholder="Enter your password">
+    </label>
+  </mat-form-field>
+  <mat-form-field hintLabel="Min 3 character">
+    <label>
+      <input minlength="3"
+             ngModel name="passwordConfirm" #passwordConfirm="ngModel"
+             matInput [type]="flag? 'password': 'text'" placeholder="Confirm your password">
+    </label>
+    <mat-error *ngIf="password!=passwordConfirm"> Password and confirmed password doesn't match</mat-error>
+  </mat-form-field>
+  <div class="button-container">
+    <button mat-flat-button color="accent"> Register </button>
+    <button mat-flat-button color="warn"> Cancel</button>
+  </div>
+</mat-card>
