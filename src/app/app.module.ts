@@ -11,14 +11,12 @@ import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
-import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    NavbarComponent
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
