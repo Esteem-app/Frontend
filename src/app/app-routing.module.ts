@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserLoginComponent } from './user/user-login/user-login.component';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
-import {WelcomeComponent} from './welcome/welcome.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 const routes: Routes = [
-  { path: 'welcome', component: WelcomeComponent },
-  { path: 'register', component: UserRegisterComponent },
-  { path: 'login', component: UserLoginComponent },
+  { path: 'welcome', loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule) },
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },  // TODO works also without /user/
   { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: '',   redirectTo: '/welcome', pathMatch: 'full' }
